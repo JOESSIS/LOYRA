@@ -1,6 +1,7 @@
 import { useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import logoGold from "@/assets/loyra-official-logo-gold.png";
 
 /**
  * Barre de progression ultra-fine et dorée au sommet de l'écran lors du changement de page.
@@ -33,7 +34,7 @@ export function RouteProgressBar() {
 }
 
 /**
- * Écran d'accueil de chargement haute couture Maison L'OYRA.
+ * Écran d'accueil de chargement haute couture Maison L'OYRA avec le logo officiel de la marque.
  * S'affiche au premier chargement puis s'efface délicatement dès que l'application est prête.
  */
 export function AppLoadingScreen() {
@@ -52,7 +53,7 @@ export function AppLoadingScreen() {
     // Effacement fluide de l'écran d'accueil
     const timer = setTimeout(() => {
       setMounted(false);
-    }, 600);
+    }, 650);
 
     return () => clearTimeout(timer);
   }, []);
@@ -67,43 +68,27 @@ export function AppLoadingScreen() {
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#1F140E] text-[#FAF5EE] pointer-events-none select-none"
         >
-          {/* Logo et Halo d'or */}
+          {/* Logo Officiel L'OYRA et Halo d'or */}
           <div className="relative flex flex-col items-center">
             {/* Halo lumineux ambré */}
             <div className="absolute -inset-10 rounded-full bg-amber-500/10 blur-2xl animate-pulse" />
 
-            {/* Emblème Couronne & Monogramme */}
-            <div className="relative mb-5 flex h-20 w-20 items-center justify-center rounded-full border border-amber-400/30 bg-[#281C15]/80 shadow-[0_0_25px_rgba(217,119,6,0.2)]">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-9 w-9 text-amber-400"
-              >
-                <path
-                  d="M2 14 L6 6 L12 11 L18 6 L22 14 Z"
-                  fill="currentColor"
-                  opacity="0.9"
-                />
-                <circle cx="12" cy="18" r="2" fill="currentColor" />
-              </svg>
+            {/* Logo Officiel de la marque */}
+            <div className="relative mb-6 max-w-[230px] sm:max-w-[270px] px-4">
+              <img
+                src={logoGold}
+                alt="L'OYRA — Haute Cosmétique"
+                className="w-full h-auto object-contain drop-shadow-[0_0_20px_rgba(232,186,107,0.35)]"
+                loading="eager"
+              />
             </div>
 
-            {/* Titre L'OYRA */}
-            <h1 className="font-display text-4xl sm:text-5xl font-light tracking-[0.22em] text-[#FAF5EE]">
-              L'OYRÂ
-            </h1>
-
-            <p className="mt-2 text-[10.5px] uppercase tracking-[0.32em] text-amber-300/80 font-light">
-              Maison de Haute Cosmétique · Abidjan
-            </p>
-
             {/* Ligne de chargement dorée raffinée */}
-            <div className="mt-8 h-[2px] w-36 overflow-hidden rounded-full bg-white/10">
+            <div className="mt-2 h-[2px] w-40 overflow-hidden rounded-full bg-white/10">
               <div className="h-full w-full bg-gradient-to-r from-transparent via-amber-400 to-transparent animate-[loyraShimmer_1.4s_infinite_ease-in-out]" />
             </div>
 
-            <p className="mt-4 text-[10px] uppercase tracking-[0.25em] text-white/50 font-light">
+            <p className="mt-4 text-[10px] uppercase tracking-[0.28em] text-white/50 font-light">
               Sublimation de votre éclat...
             </p>
           </div>

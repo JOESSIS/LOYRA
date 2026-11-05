@@ -109,17 +109,17 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         <div id="loyra-initial-preloader">
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-            <div style={{ width: 68, height: 68, borderRadius: "50%", border: "1px solid rgba(217,119,6,0.35)", background: "#281C15", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18, boxShadow: "0 0 24px rgba(217,119,6,0.2)" }}>
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="#F59E0B">
-                <path d="M2 14 L6 6 L12 11 L18 6 L22 14 Z" opacity="0.9" />
-                <circle cx="12" cy="18" r="2" />
-              </svg>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", padding: "0 24px" }}>
+            <img
+              src="/images/loyra-official-logo-gold.png"
+              alt="L'OYRA"
+              style={{ width: "230px", maxWidth: "80vw", height: "auto", objectFit: "contain", marginBottom: "16px", filter: "drop-shadow(0 0 20px rgba(232,186,107,0.35))" }}
+            />
+            <div style={{ width: 140, height: 2, background: "rgba(255,255,255,0.12)", borderRadius: 99, overflow: "hidden" }}>
+              <div style={{ width: "100%", height: "100%", background: "linear-gradient(90deg, transparent, #E8BA6B, transparent)", animation: "loyraShimmer 1.4s infinite ease-in-out" }} />
             </div>
-            <div style={{ fontSize: 32, letterSpacing: "0.22em", color: "#FAF5EE", fontWeight: 300 }}>L'OYRÂ</div>
-            <div style={{ fontSize: 10, letterSpacing: "0.3em", color: "rgba(251,191,36,0.85)", marginTop: 6, textTransform: "uppercase" }}>Haute Cosmétique · Abidjan</div>
-            <div style={{ marginTop: 26, width: 130, height: 2, background: "rgba(255,255,255,0.12)", borderRadius: 99, overflow: "hidden" }}>
-              <div style={{ width: "100%", height: "100%", background: "linear-gradient(90deg, transparent, #F59E0B, transparent)", animation: "loyraShimmer 1.4s infinite ease-in-out" }} />
+            <div style={{ fontSize: 10, letterSpacing: "0.28em", color: "rgba(255,255,255,0.5)", marginTop: 16, textTransform: "uppercase", fontWeight: 300 }}>
+              Sublimation de votre éclat...
             </div>
           </div>
         </div>

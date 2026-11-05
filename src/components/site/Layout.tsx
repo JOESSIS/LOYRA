@@ -36,7 +36,7 @@ export function Header() {
           </div>
         </div>
 
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-12">
+        <div className="mx-auto flex h-20 sm:h-24 max-w-7xl items-center justify-between px-6 md:px-12">
           {/* Mobile menu trigger */}
           <div className="flex items-center gap-3 lg:hidden">
             <button
@@ -66,9 +66,9 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Centered Brand Logo (Vectoriel haute fidélité) */}
+          {/* Centered Brand Logo Officiel */}
           <Link to="/" className="flex items-center justify-center py-2" aria-label="L'OYRA – Accueil">
-            <LoyraLogo className="h-14 w-auto hover:opacity-90 transition-opacity" />
+            <LoyraLogo className="h-16 sm:h-18 md:h-20 w-auto hover:opacity-90 transition-opacity" />
           </Link>
 
           {/* Desktop Navigation Right & Actions */}
@@ -139,7 +139,7 @@ export function Header() {
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="flex items-center justify-between pb-6 border-b border-border">
-                <LoyraLogo className="h-10 w-auto" />
+                <LoyraLogo className="h-14 w-auto" />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   aria-label="Fermer le menu"
@@ -320,7 +320,7 @@ export function Footer() {
     <footer className="mt-32 border-t border-border bg-[#231812] text-[#FAF5EE]">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 text-xs text-[#FAF5EE]/70 md:grid-cols-4 md:px-12">
         <div className="md:col-span-2">
-          <LoyraLogo className="h-16 w-auto mb-6" dark={true} />
+          <LoyraLogo className="h-24 sm:h-28 w-auto mb-6 !justify-start" dark={true} />
           <p className="text-sm font-light text-[#FAF5EE]/80 max-w-md leading-relaxed">
             Maison de haute cosmétique aux plantes d'Afrique créée en Côte d'Ivoire. Des formules souveraines pour célébrer et sublimer chaque teint noir, marron clair et métisse.
           </p>
