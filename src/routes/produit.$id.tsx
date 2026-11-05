@@ -55,6 +55,8 @@ function ProductPage() {
           <img
             src={product.image}
             alt={product.title}
+            loading="eager"
+            decoding="async"
             className="aspect-[4/5] w-full object-cover transition-transform duration-1000 hover:scale-105"
           />
           <div className="absolute top-4 left-4 rounded-full bg-background/90 backdrop-blur px-4 py-1.5 text-xs uppercase tracking-wider font-semibold text-foreground shadow">

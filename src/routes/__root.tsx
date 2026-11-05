@@ -15,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CartProvider } from "@/lib/cart";
 import { CurrencyProvider } from "@/lib/currency";
 import { Header, Footer, CartDrawer, PageFade } from "@/components/site/Layout";
+import { RouteProgressBar, AppLoadingScreen } from "@/components/site/PageLoader";
 
 function NotFoundComponent() {
   return (
@@ -107,6 +108,21 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <div id="loyra-initial-preloader">
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+            <div style={{ width: 68, height: 68, borderRadius: "50%", border: "1px solid rgba(217,119,6,0.35)", background: "#281C15", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18, boxShadow: "0 0 24px rgba(217,119,6,0.2)" }}>
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="#F59E0B">
+                <path d="M2 14 L6 6 L12 11 L18 6 L22 14 Z" opacity="0.9" />
+                <circle cx="12" cy="18" r="2" />
+              </svg>
+            </div>
+            <div style={{ fontSize: 32, letterSpacing: "0.22em", color: "#FAF5EE", fontWeight: 300 }}>L'OYRÂ</div>
+            <div style={{ fontSize: 10, letterSpacing: "0.3em", color: "rgba(251,191,36,0.85)", marginTop: 6, textTransform: "uppercase" }}>Haute Cosmétique · Abidjan</div>
+            <div style={{ marginTop: 26, width: 130, height: 2, background: "rgba(255,255,255,0.12)", borderRadius: 99, overflow: "hidden" }}>
+              <div style={{ width: "100%", height: "100%", background: "linear-gradient(90deg, transparent, #F59E0B, transparent)", animation: "loyraShimmer 1.4s infinite ease-in-out" }} />
+            </div>
+          </div>
+        </div>
         {children}
         <Scripts />
       </body>
@@ -121,6 +137,8 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <CurrencyProvider>
         <CartProvider>
+          <RouteProgressBar />
+          <AppLoadingScreen />
           <Header />
           <PageFade>
             <Outlet />

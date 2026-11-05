@@ -203,12 +203,12 @@ function Checkout() {
                 Mode de règlement privilégié
               </label>
               <div className="grid grid-cols-2 gap-2 text-xs">
-                {[
+                {([
                   ["wave", "Wave"],
                   ["orange", "Orange Money"],
                   ["mtn", "MTN MoMo"],
                   ["card", "Carte Bancaire"],
-                ].map(([id, label]) => (
+                ] as const).map(([id, label]) => (
                   <button
                     key={id}
                     type="button"

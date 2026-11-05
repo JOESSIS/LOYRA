@@ -58,6 +58,7 @@ function Philo() {
             src={serum}
             alt="Sérum L'OYRA"
             loading="lazy"
+            decoding="async"
             className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105"
           />
         </div>
@@ -71,6 +72,7 @@ function Philo() {
               src={cream}
               alt="Crème L'OYRA"
               loading="lazy"
+              decoding="async"
               className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>

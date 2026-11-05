@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Sparkles, ShieldCheck, ArrowRight, Camera, MessageCircle, Heart, CheckCircle2, UserCheck } from "lucide-react";
 import serum from "@/assets/serum.jpg";
 import cream from "@/assets/cream.jpg";
-import deuxiemeImage from "@/assets/deuxieme-image-loyra.png";
+import deuxiemeImage from "@/assets/deuxieme-image-loyra.jpg";
 
 export const Route = createFileRoute("/resultats-temoignages")({
   head: () => ({

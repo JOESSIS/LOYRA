@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles, ShieldCheck, Globe } from "lucide-react";
-import heroImage from "@/assets/hero-loyra.png";
-import deuxiemeImage from "@/assets/deuxieme-image-loyra.png";
-import reveleImage from "@/assets/revele-ta-beaute.jpg";
+import heroImage from "@/assets/hero-loyra.jpg";
+import deuxiemeImage from "@/assets/deuxieme-image-loyra.jpg";
+import reveleImage from "@/assets/revele-ta-beaute-opt.jpg";
 import cream from "@/assets/cream.jpg";
 import serum from "@/assets/serum.jpg";
 import { ProductCard } from "@/components/site/ProductCard";
@@ -24,6 +24,9 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [
+      { rel: "preload", as: "image", href: heroImage },
     ],
   }),
   component: Index,
@@ -62,6 +65,7 @@ function Index() {
               alt="L'OYRA Cosmétique — S'assumer avec L'OYRA"
               className="h-full w-full object-cover object-center transition-transform duration-1000 hover:scale-103"
               loading="eager"
+              decoding="async"
             />
             {/* Subtle Gradient for readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#231812]/80 via-transparent to-black/20" />
@@ -115,6 +119,7 @@ function Index() {
               alt="Maison L'OYRA — Soins pour tous teints, femme rayonnante"
               className="absolute inset-0 h-full w-full object-cover object-[82%_center] md:object-[85%_center] lg:object-right"
               loading="lazy"
+              decoding="async"
             />
 
             {/* Gradient subtil garantissant un contraste parfait pour les textes sur la gauche tout en laissant la dame assise 100% visible à droite */}
@@ -220,6 +225,7 @@ function Index() {
                 alt="Révèle ta beauté - L'OYRA Cosmétique"
                 className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105"
                 loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#231812]/70 via-transparent to-transparent lg:hidden" />
             </div>
@@ -300,6 +306,7 @@ function Index() {
                 src={cream}
                 alt="Crème Velours L'OYRA"
                 loading="lazy"
+                decoding="async"
                 className="aspect-[3/4] w-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
@@ -308,6 +315,7 @@ function Index() {
                 src={serum}
                 alt="Sérum Éclat Pur L'OYRA"
                 loading="lazy"
+                decoding="async"
                 className="aspect-[3/4] w-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>

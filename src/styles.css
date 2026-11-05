@@ -128,3 +128,31 @@
     font-weight: 300;
   }
 }
+
+@keyframes loyraShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Preloader ultra-rapide avant le chargement JS */
+#loyra-initial-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1F140E;
+  color: #FAF5EE;
+  transition: opacity 0.45s ease-out;
+  pointer-events: none;
+}
+
+#loyra-initial-preloader.loyra-preloader-hidden {
+  opacity: 0;
+}
