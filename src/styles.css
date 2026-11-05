@@ -1,0 +1,130 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition for L'OYRA Cosmétique.
+ * Palette: Warm Luxury Beige background, Rich Chocolate Brown, Warm Gold, Ebony Black.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Fond beige de luxe chaleureux */
+  --background: oklch(0.97 0.015 82);       /* #FAF5EE */
+  --foreground: oklch(0.18 0.025 45);       /* #231812 - Marron espresso profond */
+  --card: oklch(0.985 0.01 85);             /* #FDFBFAF - Crème ivoire */
+  --card-foreground: oklch(0.18 0.025 45);
+  --popover: oklch(0.985 0.01 85);
+  --popover-foreground: oklch(0.18 0.025 45);
+  --primary: oklch(0.30 0.055 42);          /* #48291B - Marron chocolat noble */
+  --primary-foreground: oklch(0.97 0.015 82);
+  --secondary: oklch(0.925 0.022 78);       /* #EDE3D4 - Beige sable doré */
+  --secondary-foreground: oklch(0.25 0.035 45);
+  --muted: oklch(0.925 0.022 78);
+  --muted-foreground: oklch(0.48 0.03 55);   /* #766355 - Moka doux */
+  --accent: oklch(0.85 0.06 68);            /* Or ambré chaud */
+  --accent-foreground: oklch(0.18 0.025 45);
+  --border: oklch(0.88 0.018 78);           /* #DFCFC1 - Ligne beige douce */
+  --input: oklch(0.88 0.018 78);
+  --ring: oklch(0.45 0.05 45);
+}
+
+.dark {
+  --background: oklch(0.15 0.02 45);        /* #1E1510 - Noir chocolat velours */
+  --foreground: oklch(0.96 0.015 82);       /* Beige clair */
+  --card: oklch(0.20 0.025 45);             /* #281C15 */
+  --card-foreground: oklch(0.96 0.015 82);
+  --popover: oklch(0.20 0.025 45);
+  --popover-foreground: oklch(0.96 0.015 82);
+  --primary: oklch(0.88 0.05 75);           /* Or beige lumineux */
+  --primary-foreground: oklch(0.15 0.02 45);
+  --secondary: oklch(0.24 0.025 45);        /* Marron foncé */
+  --secondary-foreground: oklch(0.96 0.015 82);
+  --muted: oklch(0.24 0.025 45);
+  --muted-foreground: oklch(0.72 0.02 75);
+  --border: oklch(0.30 0.02 45);
+  --input: oklch(0.30 0.02 45);
+  --ring: oklch(0.85 0.06 68);
+}
+
+@theme inline {
+  --font-sans: "Jost", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+}
+
+@utility btn-cta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.1rem 2.75rem;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.35s ease;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(40, 24, 16, 0.15);
+  &:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(40, 24, 16, 0.22);
+  }
+}
+
+@utility nav-link {
+  color: var(--muted-foreground);
+  transition: color 0.3s ease;
+  &:hover {
+    color: var(--foreground);
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    min-height: 100vh;
+  }
+  .font-display {
+    font-weight: 300;
+  }
+}
